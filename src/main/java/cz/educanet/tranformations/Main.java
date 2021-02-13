@@ -5,7 +5,7 @@ import cz.educanet.tranformations.presentation.Window;
 public class Main {
 
     public static void main(String[] args) {
-        new Window(800, 600, "Fragment shader example");
+        new Window(1920, 1080, "triengel");
     }
 
 }

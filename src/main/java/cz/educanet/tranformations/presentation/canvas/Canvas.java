@@ -11,8 +11,8 @@ import java.util.Set;
 
 public class Canvas extends JPanel {
 
-    private static final int SCREEN_WIDTH = 24;
-    private static final int SCREEN_HEIGHT = 18;
+    private static final int SCREEN_WIDTH = 480;
+    private static final int SCREEN_HEIGHT = 270;
 
     private final ScreenManager screenManager = new ScreenManager();
 
