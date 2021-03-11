@@ -11,11 +11,9 @@ import java.util.Set;
 
 public class Canvas extends JPanel {
 
-    private static final int SCREEN_WIDTH = 480;
-    private static final int SCREEN_HEIGHT = 270;
-
+    private static final int SCREEN_WIDTH = 24;
+    private static final int SCREEN_HEIGHT = 18;
     private final ScreenManager screenManager = new ScreenManager();
-
     private int cellWidth;
     private int cellHeight;
 
@@ -30,6 +28,14 @@ public class Canvas extends JPanel {
             else
                 screenManager.unselect(c);
         }));
+    }
+
+    public static int getScreenWidth() {
+        return SCREEN_WIDTH;
+    }
+
+    public static int getScreenHeight() {
+        return SCREEN_HEIGHT;
     }
 
     @Override
@@ -49,8 +55,10 @@ public class Canvas extends JPanel {
                     g.fillRect(i * cellWidth, j * cellHeight, cellWidth, cellHeight);
                 }
 
-                g.setColor(Color.darkGray);
-                g.drawRect(i * cellWidth, j * cellHeight, cellWidth, cellHeight);
+                if (ScreenManager.desiredShape == ScreenManager.shape.TRIANGLE) {
+                    g.setColor(Color.darkGray);
+                    g.drawRect(i * cellWidth, j * cellHeight, cellWidth, cellHeight);
+                }
 
                 if (screenManager.isSelected(cell)) {
                     g.setColor(Color.lightGray);
